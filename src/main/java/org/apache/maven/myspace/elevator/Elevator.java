@@ -6,10 +6,15 @@ package org.apache.maven.myspace.elevator;
  */
 public class Elevator 
 {
-    static boolean doorOpen;
-    boolean doorClose;
-    boolean goingUp;
-    boolean goingDown;
+    private static boolean doorOpen;
+    private static boolean doorClose;
+    private static boolean goingUp;
+    private boolean goingDown;
+    private int totalNumberOfFloors;
+    
+    public Elevator(int totalNumberOfFloors){
+    	this.totalNumberOfFloors = totalNumberOfFloors;
+    }
     
     public void printFloorNumber(int floorNum){
     	System.out.println("I am at Floor Number - " + floorNum);
@@ -23,4 +28,18 @@ public class Elevator
     	doorClose = true;
     }
     
+    public void elevatorGoingUp(int floorNumber){
+    	if(floorNumber >= 1 && floorNumber <= totalNumberOfFloors){
+    		goingUp = true;
+    		System.out.println("Going Up.");
+    		printFloorNumber(floorNumber);
+    	}
+    }
+    public void elevtorGoingDown(int floorNumber){
+    	if(floorNumber <= totalNumberOfFloors && floorNumber <= 1){
+    		goingDown = true;
+    		System.out.println("Going Down.");
+    		printFloorNumber(floorNumber);
+    	}
+    }
 }
