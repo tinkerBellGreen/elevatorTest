@@ -6,6 +6,6 @@ public class ElevatorTest
 {
 	@Test
 	public void testElevator(){
-		
+		int noOfFloors = 5;
 	}
 }
